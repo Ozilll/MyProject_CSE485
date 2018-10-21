@@ -8,6 +8,17 @@
 					</div>
 				</div>
 				<div class="span5">
+					<p>
+						<?php
+							if (logged_in()) {
+								echo "logged in";
+							}else{
+								redirect(index.php);
+							}
+
+
+					 	?>
+					</p>
 					<p>Họ tên: Trương Minh Đức</p>
 					<p>Lớp: 58HT</p>
 					<p>Mã sinh viên: 1651160957</p>

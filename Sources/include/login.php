@@ -7,45 +7,26 @@
           <h2>QUẢN LÝ ĐỒ ÁN TỐT NGHIỆP</h2>
           <hr>
         </div>
-        <form id="Login">
+        <?php display_message(); ?>
+        <form id="Login" method="POST">
+          <?php validate_user_login() ?>
           <div class="form-group">
-            <input type="text" class="form-control" id="inputID" placeholder="Tài khoản">
+            <input type="email" class="form-control" name="email_student" placeholder="Email">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Mật khẩu">
+            <input type="password" class="form-control" name="password_student" placeholder="Mật khẩu">
           </div>
+          <div class="form-group">
+            <input type="checkbox" tabindex="3" name="remember" id="remember" style="float: left;">
+            <label for="remember" style="float: left;"> Lưu tài khoản</label>
+          </div>
+          <br>
+          <br>
           <div class="forgot">
             Chưa có tài khoản? <a href="register.php">Đăng ký</a>
           </div>
           <button type="submit" class="btn btn-primary">Đăng nhập</button>
         </form>
-        
-
-        <!-- Test form -->
-<!--         <form id="register-form" method="post" role="form">
-          <?php validate_user_registration(); ?>
-          <div>
-            <input type="text" name="first_name" placeholder="First name" required>
-          </div>
-          <div>
-            <input type="text" name="last_name" placeholder="Last name" required>
-          </div>
-          <div>
-            <input type="text" name="username" placeholder="username" required>
-          </div>
-          <div>
-            <input type="email" name="email" placeholder="email" required>
-          </div>
-          <div>
-            <input type="password" name="password" placeholder="password" required>
-          </div>
-          <div>
-            <input type="password" name="confirm_password" placeholder="Confirm password" required>
-          </div>
-          <div>
-            <input type="submit" name="register-submit">
-          </div>
-        </form> -->
       </div>
     </div>
   </div>

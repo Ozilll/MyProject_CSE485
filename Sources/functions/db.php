@@ -12,21 +12,21 @@
 
   function query($query){
     global $con;
-
     return mysqli_query($con, $query);
+  }
+
+  function fetch_array($result){
+    global $con;
+    return mysqli_fetch_array($result);
   }
 
   function confirm($result){
     global $con;
 
-    if (!$result) {
+    if (!($result)) {
+
       die("QUERY FAILED" . mysqli_error($con));
+      
     }
-  }
-
-  function fetch_array($result){
-    global $con;
-
-    return mysqli_fetch_array($result);
   }
 ?>

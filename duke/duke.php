@@ -31,12 +31,25 @@
 			<option <?php if (isset($pick) && $pick == 'join') echo "selected=\"selected\""; ?>value='join'>Tham gia đề tài do các thầy cô lựa chọn</option>
 		</select><br/><br/>
 		<span style="color: blue;"><?php if (isset($error['pick'])) echo $error['pick']; ?></span><br/>
-		<button type = "sumbit" class="btn btn-info btn-lg" name="sm_order" data-toggle="modal" data-target="#pick">tiếp theo</button>
-		<div class="modal fade" id="pick" role="dialog">
-			<div class="modal-dialog">
-			
-			</div>
-	</div>
 	</form>
+	<div class="container">
+		<button type = "button" class="btn btn-info btn-lg" name="sm_order" data-toggle="modal" data-target="#myModal">tiếp theo</button>
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;></button>
+						<h4 class="mdoal-title">Đề tài của bạn</h4>
+					</div>
+					<div class="modal-body">
+						<p>vailoz</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Đăng ký</button>
+					</div>
+				<div>	
+			</div>
+		</div>
+	</div>
 </body>
 </html>

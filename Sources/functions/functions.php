@@ -321,10 +321,56 @@ function logged_in(){
 
 	}
 
-}
+} //function
 
 
+/*******************RECOVER PASSWORD FUNCTIONS*********************/
 
+function recover_password() {
+
+	if ($_SERVER['REQUEST_METHOD'] == "POST") {
+		
+		if (isset($_SESSION['token']) && $_POST['token'] === $_SESSION['token']) {
+			
+			$email = clean($_POST['email_student']);
+			if (email_exists($email)) {
+				
+				$validation_code = md5(microtime());
+
+				$sql = "UPDATE students SET validation_code = '".escape($validation_code)."' WHERE email = '".escape($email)."'";
+				$result = query($sql);
+				confirm($result);
+
+				setcookie('temp_access_code', $validation_code, time()+60);
+
+				$subject = "Please reset your password";
+				$message = "Here is your password reset code {$validation_code} 
+				Click here to reset your password http://doan.dev.localhost.com/Sources/code.php?email=$email&code=$validation_code
+				";
+
+				$headers = "From: doan@wru.vn";
+
+				if(send_email($email, $subject, $message, $headers
+				)){
+					
+				}else{
+
+					echo validation_errors("This email could not be sent");
+				}
+
+			}else{
+
+				echo validation_errors("This email does exist");
+			}
+		}else{
+
+			redirect("login.php");
+		}
+		
+
+	} //post request
+
+} //function
 
 
 

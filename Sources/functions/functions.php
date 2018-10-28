@@ -248,12 +248,37 @@ function validate_user_login(){
 		}else{
 
 			if (login_user($email, $password, $remember)) {
-				$_SESSION['email_student'] = $email;
+
+				$sql = "SELECT * FROM students WHERE email ='".escape($email)."' AND active = 1";
+				$result = query($sql);
+				$row = fetch_array($result);
+				$_SESSION['email'] = $email;
+				$_SESSION['username'] = $row['username_student'];
+				$_SESSION['first_name'] = $row['first_name_student'];
+				$_SESSION['last_name'] = $row['last_name_student'];
+				$_SESSION['project'] = $row['project'];
 				redirect("page-students-index.php");
-			} else{
-
+			}elseif (login_lecturers($email, $password, $remember)) {
+				$sql = "SELECT * FROM lecturers WHERE email ='".escape($email)."' AND active = 1";
+				$result = query($sql);
+				$row = fetch_array($result);
+				$_SESSION['email'] = $email;
+				$_SESSION['username'] = $row['username'];
+				$_SESSION['first_name'] = $row['first_name'];
+				$_SESSION['last_name'] = $row['last_name'];
+				redirect("page-lecturers-index.php");
+			}elseif (login_admin($email, $password, $remember)) {
+				$sql = "SELECT * FROM admin WHERE email ='".escape($email)."' AND active = 1";
+				$result = query($sql);
+				$row = fetch_array($result);
+				$_SESSION['email'] = $email;
+				$_SESSION['username'] = $row['username'];
+				$_SESSION['first_name'] = $row['first_name'];
+				$_SESSION['last_name'] = $row['last_name'];
+				redirect("admin/index.php");
+			} 
+			else{
 				echo validation_errors("Email hoặc mật khẩu của bạn không đúng!");
-
 			}
 
 		}
@@ -265,9 +290,9 @@ function validate_user_login(){
 
 
 /*******************USER LOGIN FUNCTIONS*********************/
-function login_user($email, $password, $remember){
+function login_admin($email, $password, $remember){
 
-	$sql = "SELECT password_student, id_student FROM students WHERE email ='".escape($email)."' AND active = 1";
+	$sql = "SELECT * FROM admin WHERE email ='".escape($email)."' AND active = 1";
 
 	$result = query($sql);
 
@@ -275,9 +300,47 @@ function login_user($email, $password, $remember){
 		
 		$row = fetch_array($result);
 
-		$db_password = $row['password_student'];
+		$db_password = $row['password'];
+		if ($password === $db_password) {
 
-		if (md5($password) === $db_password) {
+			if ($remember == "on") {
+				setcookie('email_student', $email, time() + 86400);
+			}
+			
+			$_SESSION['email'] = $email;
+
+			return true;
+
+		}else{
+
+			return false;
+
+		}
+
+		return true;
+
+
+	} else{
+
+		return false;
+
+	}
+}
+
+
+
+function login_lecturers($email, $password, $remember){
+
+	$sql = "SELECT * FROM lecturers WHERE email ='".escape($email)."' AND active = 1";
+
+	$result = query($sql);
+
+	if (row_count($result) == 1) {
+		
+		$row = fetch_array($result);
+
+		$db_password = $row['password'];
+		if ($password === $db_password) {
 
 			if ($remember == "on") {
 				setcookie('email_student', $email, time() + 86400);
@@ -285,6 +348,48 @@ function login_user($email, $password, $remember){
 			
 			$_SESSION['email_student'] = $email;
 
+			return true;
+
+		}else{
+
+			return false;
+
+		}
+
+		return true;
+
+
+	} else{
+
+		return false;
+
+	}
+
+
+
+} //function
+
+
+function login_user($email, $password, $remember){
+
+	$sql = "SELECT * FROM students WHERE email ='".escape($email)."' AND active = 1";
+
+	$result = query($sql);
+
+	if (row_count($result) == 1) {
+		
+		$row = fetch_array($result);
+
+
+		$db_password_student = $row['password_student'];
+
+		if (md5($password) === $db_password_student) {
+
+			if ($remember == "on") {
+				setcookie('email_student', $email, time() + 86400);
+			}
+			
+			$_SESSION['email_student'] = $email;
 
 			return true;
 
@@ -353,7 +458,7 @@ function recover_password() {
 				if(!send_email($email, $subject, $message, $headers
 				)){
 
-					echo validation_errors("This email could not be sent");
+					echo validation_errors("Không gửi được email");
 				}
 
 				set_message("<p class='bg-success text-center'>Please check your email or spam folder for a password reset code</p>");
@@ -361,7 +466,7 @@ function recover_password() {
 
 			}else{
 
-				echo validation_errors("This email does exist");
+				echo validation_errors("Email không tồn tại");
 			}
 		}else{
 
@@ -409,19 +514,6 @@ function validate_code(){
 
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>

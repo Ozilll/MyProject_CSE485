@@ -8,11 +8,10 @@
 					</div>
 				</div>
 				<div class="span5">
-					<p>Giảng viên:...</p>
+					<p>Giảng viên: Kiều Tuấn Dũng</p>
 					<p>Chuyên ngành:...</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<hr>

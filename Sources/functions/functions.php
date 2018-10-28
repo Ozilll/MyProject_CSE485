@@ -248,7 +248,7 @@ function validate_user_login(){
 		}else{
 
 			if (login_user($email, $password, $remember)) {
-
+				$_SESSION['email_student'] = $email;
 				redirect("page-students-index.php");
 			} else{
 
@@ -341,7 +341,7 @@ function recover_password() {
 				$result = query($sql);
 				confirm($result);
 
-				setcookie('temp_access_code', $validation_code, time()+60);
+				setcookie('temp_access_code', $validation_code, time()+120);
 
 				$subject = "Please reset your password";
 				$message = "Here is your password reset code {$validation_code} 
@@ -350,13 +350,14 @@ function recover_password() {
 
 				$headers = "From: doan@wru.vn";
 
-				if(send_email($email, $subject, $message, $headers
+				if(!send_email($email, $subject, $message, $headers
 				)){
-					
-				}else{
 
 					echo validation_errors("This email could not be sent");
 				}
+
+				set_message("<p class='bg-success text-center'>Please check your email or spam folder for a password reset code</p>");
+				redirect("login.php");
 
 			}else{
 
@@ -370,10 +371,44 @@ function recover_password() {
 
 	} //post request
 
-} //function
+} //functions
 
 
+/*******************CODE VALIDATION FUNCTIONS*********************/
 
+function validate_code(){
+	if (isset($_COOKIE['temp_access_code'])) {
+		if ($_SERVER['REQUEST_METHOD'] == "GET") {
+			if (isset($_GET['email_student']) && isset($_GET['code'])) {
+				redirect("index.php");
+				echo validation_errors("Email không tồn tại!");
+			}else if (empty($_GET['email_student']) || empty($_GET['code'])) {
+				redirect("index.php");
+				echo validation_errors("Email không tồn tại!");
+			}else{
+				if (isset($_POST['code'])) {
+					$email = clean(($_POST['email_student']));
+
+					$validation_code = clean($_POST['code']);
+
+					$sql = "SELECT id_student from students where validation_code ='".escape($validation_code)."'";
+					$result = query($sql);
+					confirm($result);
+					if (row_count($result) == 1) {
+						redirect("reset.php");
+					}else{
+						echo validation_errors("Wrong validation code");
+					}
+				}
+			}
+		}
+	}else{
+		set_message("<p class='bg-danger text-center'>Sorry your validation cookie was expire</p>");
+
+		redirect("recover.php");
+
+	}
+}
 
 
 

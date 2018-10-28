@@ -13,6 +13,9 @@
 				<div style="text-align: center; font-size: 17px; font-weight: bold;margin-bottom: 10px; ">Danh mục chính</div>
 				<ol class="property-list-homepage">
 					<li> <a href="#report">Thông tin đáng chú ý</a> <hr></li>
+					<li> <a href="#myproject">Đồ án của tôi</a> <hr></li>
+					<li> <a href="#process">Tiến trình</a> <hr></li>
+					<li> <a href="#information-lecturers">Thông tin giảng viên</a> <hr></li>
 					<li> <a href="#all-projects">Tổng hợp đồ án của sinh viên</a> </li>
 				</ol>
 			</div>
@@ -27,6 +30,15 @@
 							<p>THÔNG TIN ĐÁNG CHÚ Ý</p>
 						</div>
 					</div>	
+				</div>
+				<div id="myproject" class="tab_content">
+					Đồ án của tôi
+				</div>
+				<div id="process" class="tab_content">
+					Tiến trình đồ án
+				</div>
+				<div id="information-lecturers" class="tab_content">
+					Thông tin giảng viên
 				</div>
 				<div id="all-projects" class="tab_content">
 					<div class="homepage-projects">

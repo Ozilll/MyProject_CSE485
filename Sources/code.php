@@ -4,10 +4,10 @@
 		<div class="row-fluid">
 			<div class="text-center"><h2 style="font-family: Arial"><b>KHÔI PHỤC TÀI KHOẢN</b></h2></div>
 			<form method="post">
-				<?php recover_password(); ?>
+				<?php validate_code(); ?>
 				<div class="form-group" style="text-align: center;">
 					<p style="font-family: Arial; font-size: 20px"><b>Nhập mã code của bạn</b></p>
-	            	<input type="text" class="form-control" name="" placeholder="**************">
+	            	<input type="text" class="form-control" name="code" placeholder="**************">
 	          	</div>
 				<dir class="row">
 					<div class="form-code">

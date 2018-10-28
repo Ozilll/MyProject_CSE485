@@ -10,7 +10,7 @@
 	            	<input type="text" class="form-control" name="" placeholder="**************">
 	          	</div>
 				<dir class="row">
-					<div class="form-group" style="margin-left: 360px">
+					<div class="form-code">
 						<div class="span2">
 							<button type="submit" class="btn btn-primary" name="cancel-submit">Hủy bỏ</button>
 						</div>

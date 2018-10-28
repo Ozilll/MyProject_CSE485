@@ -10,7 +10,7 @@
 	            	<input type="email" class="form-control" name="email_student" placeholder="Email">
 	          	</div>
 				<dir class="row">
-					<div class="form-group" style="margin-left: 150px">
+					<div class="form-recover">
 						<div class="span6">
 							<button type="submit" class="btn btn-primary" name="cancel-submit">Hủy bỏ</button>
 						</div>

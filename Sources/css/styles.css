@@ -24,7 +24,12 @@
 
 .login-form .form-group {
   margin-bottom:10px;
-
+}
+.form-code{
+  margin-left: 360px;
+}
+.form-recover{
+  margin-left: 150px;
 }
 .login-form{
   text-align:center;

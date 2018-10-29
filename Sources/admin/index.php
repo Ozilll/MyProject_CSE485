@@ -25,10 +25,7 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a class="navbar-brand brand-logo" href="index.php">
-          <img src="#" alt="logo" />
-        </a>
-        <a class="navbar-brand brand-logo-mini" href="index.php">
-          <img src="#" alt="logo" />
+          Admin
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -51,14 +48,12 @@
                 </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-medium text-dark">Đức trương
-                    <span class="float-right font-weight-light small-text">1 phút trước</span>
                   </h6>
                   <p class="font-weight-light small-text">
                     Cuộc phản biện đã bị hủy bỏ
                   </p>
                 </div>
               </a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
                   <img src="images/faces/face2.jpg" alt="image" class="profile-pic">

@@ -41,7 +41,9 @@
                   <p class="profile-name">Admin</p>
                   <div>
                     <small class="designation text-muted">Quản lý</small>
-                    <span class="status-indicator online"></span>
+                     <a href="#">
+                      <span class="glyphicon glyphicon-log-out">Đăng Xuất</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -84,10 +86,10 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Tài khoản sinh viên</a>
+                  <a class="nav-link" href="../../pages/tables/sinhvien.php">Tài khoản sinh viên</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Tài khoản giáo viên</a>
+                  <a class="nav-link" href="../../pages/tables/giaovien.php">Tài khoản giáo viên</a>
                 </li>
               </ul>
             </div>

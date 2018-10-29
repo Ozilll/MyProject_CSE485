@@ -5,19 +5,18 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Kết quả</title>
+  <title>Phản biện</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/iconfonts/font-awesome/css/font-awesome.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 
 <body>
@@ -28,8 +27,12 @@
         <a class="navbar-brand brand-logo" href="index.php">
           Admin
         </a>
-      </div>     
-      </nav>
+      </div>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:../../partials/_sidebar.html -->
@@ -100,30 +103,29 @@
           </li>
         </ul>
       </nav>
-      <!-- partial -->
-      <div <div class="content-wrapper">
+         <div <div class="content-wrapper">
           <div class="row purchace-popup">
           </div>
           <div class="row">
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">ĐỒ ÁN</h4>
+                  <h4 class="card-title">Bảng quản lý tài khoản giáo viên</h4>
                   <div class="table-responsive">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
                           <th>
-                            #
+                            Số thứ tự
                           </th>
                           <th>
                             Họ Tên
                           </th>
                           <th>
-                            Đề tài
+                            ID
                           </th>
                           <th>
-                            Kết quả
+                            Mật khẩu
                           </th>
                         </tr>
                       </thead>
@@ -139,7 +141,17 @@
                             
                           </td>
                           <td class="text-danger">
-                            9
+                            123456
+                          </td>
+                           <td>
+                              <a href="#">
+                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
+                              </a>
+                               <br>
+                              <br>
+                              <a href="#">
+                                 <span class="text-success">Sửa</span>
+                              </a>
                           </td>
                         </tr>
                         <tr>
@@ -155,7 +167,17 @@
                             
                           </td>
                           <td class="text-danger">
-                            8
+                            123456
+                          </td>
+                           <td>
+                              <a href="#">
+                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
+                              </a>
+                               <br>
+                              <br>
+                              <a href="#">
+                                 <span class="text-success">Sửa</span>
+                              </a>
                           </td>
                         </tr>
                         <tr>
@@ -171,7 +193,17 @@
                             
                           </td>
                           <td class="text-danger">
-                            7
+                            123456
+                          </td>
+                           <td>
+                              <a href="#">
+                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
+                              </a>
+                               <br>
+                              <br>
+                              <a href="#">
+                                 <span class="text-success">Sửa</span>
+                              </a>
                           </td>
                         </tr>
                         <tr>
@@ -187,13 +219,24 @@
                             
                           </td>
                           <td class="text-danger">
-                           5
+                           123456
+                          </td>
+                           <td>
+                              <a href="#">
+                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
+                              </a>
+                               <br>
+                              <br>
+                              <a href="#">
+                                 <span class="text-success">Sửa</span>
+                              </a>
                           </td>
                         </tr>
                         <tr>
                           <td >
                             5
                           </td>
+
                           <td>
                             Phạm Việt Hưng
                           </td>
@@ -202,7 +245,17 @@
                           <td > ...
                           </td>
                           <td class="text-danger">
-                            6
+                            123456
+                          </td>
+                           <td>
+                              <a href="#">
+                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
+                              </a>
+                               <br>
+                              <br>
+                              <a href="#">
+                                 <span class="text-success">Sửa</span>
+                              </a>
                           </td>
                         </tr>
                         <tr>
@@ -218,31 +271,39 @@
                             
                           </td>
                           <td class="text-danger">
-                            8
+                            123456
+                          </td>
+                          <td>
+                              <a href="#">
+                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
+                              </a>
+                              <br>
+                              <br>
+                              <a href="#">
+                                 <span class="text-success">Sửa</span>
+                              </a>
+                              
                           </td>
                         </tr>
                       </tbody>
                     </table>
+                    <button type="submit" class="btn btn-success mr-2">Thêm tài khoản giáo viên mới</button>
                   </div>
                 </div>
               </div>
             </div>
         
       </div>
-      </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
+</div>
+      
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <script src="../../vendors/js/vendor.bundle.addons.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
+
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/misc.js"></script>
-  <!-- endinject -->
+  
 </body>
 
 </html>

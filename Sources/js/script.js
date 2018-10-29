@@ -1,4 +1,4 @@
-
+// Tạo menu trong cột trái
 (function($) {
     $.fn.simpleTab = function() {
         return this.each(function() {

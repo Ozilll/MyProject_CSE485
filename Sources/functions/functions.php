@@ -515,5 +515,11 @@ function validate_code(){
 	}
 }
 
+/*******************JOIN PROJECT FUNCTIONS*********************/
+
+
+
 
 ?>
+
+

@@ -3,7 +3,7 @@
       <a href="index.php">Trang chủ</a>
       <a href="login.php">Đăng nhập</a>
       <a href="register.php">Đăng ký</a>
-      <a>Hỏi đáp</a>
+      <a href="hoidap.php">Hỏi đáp</a>
       <a>Giới thiệu</a>
     </nav>
 </div>

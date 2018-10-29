@@ -8,23 +8,12 @@
 					</div>
 				</div>
 				<div class="span5">
-					<p>
-						<?php
-							if (logged_in()) {
-								echo "logged in";
-							}else{
-								redirect(index.php);
-							}
-
-
-					 	?>
-					</p>
-					<p>Họ tên: Trương Minh Đức</p>
-					<p>Lớp: 58HT</p>
-					<p>Mã sinh viên: 1651160957</p>
+					<?php logged_in();?>
+					<p>Email: <?php echo $_SESSION['email']; ?></p>
+					<p>Tài khoản: <?php echo $_SESSION['username']; ?></p>
+					<p>Tên: <?php echo $_SESSION['last_name']." ".$_SESSION['first_name']; ?></p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<hr>

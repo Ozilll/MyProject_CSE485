@@ -116,7 +116,7 @@
               <a class="dropdown-item">
                 Xem tin nhắn
               </a>
-              <a class="dropdown-item">
+              <a href="logout.php" class="dropdown-item">
                 Đăng xuất
               </a>
             </div>
@@ -174,6 +174,23 @@
               <i class="menu-icon mdi mdi-checkbox-marked"></i>
               <span class="menu-title">Kết quả đồ án</span>
             </a>
+          </li>
+        ` <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="menu-icon mdi mdi-restart"></i>
+              <span class="menu-title">Quản lý tài khoản</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Tài khoản sinh viên </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Tài khoản giáo viên </a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>

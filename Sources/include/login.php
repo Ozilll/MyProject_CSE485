@@ -25,6 +25,9 @@
           <div class="forgot">
             Chưa có tài khoản? <a href="register.php">Đăng ký</a>
           </div>
+          <div class="forgot">
+            Quên mật khẩu? <a href="recover.php">Nhấn vào đây</a>
+          </div>
           <button type="submit" class="btn btn-primary">Đăng nhập</button>
         </form>
       </div>

@@ -14,6 +14,7 @@
 				<ol class="property-list-homepage">
 					<li> <a href="#report">Thông tin đáng chú ý</a> <hr></li>
 					<li> <a href="#myproject">Đồ án của tôi</a> <hr></li>
+					<li> <a href="#update-project">Nộp đồ án</a> <hr></li>
 					<li> <a href="#information-lecturers">Thông tin giảng viên</a> <hr></li>
 					<li> <a href="#all-projects">Tổng hợp đồ án của sinh viên</a> </li>
 				</ol>
@@ -35,6 +36,13 @@
 						include("include/signup-project.php");
 					}else{
 						echo "Belo";
+					} ?>
+				</div>
+				<div id="update-project" class="tab_content">
+					<?php if (!$_SESSION['project']) {
+						include("include/signup-project.php");
+					}else{
+						echo "Tải file";
 					} ?>
 				</div>
 				<div id="information-lecturers" class="tab_content">

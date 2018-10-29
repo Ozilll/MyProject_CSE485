@@ -5,23 +5,24 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Phản biện</title>
+  <title>Nộp đồ án</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
+  <link rel="stylesheet" href="../../vendors/icheck/skins/all.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="../../images/favicon.png" />
 </head>
 
 <body>
-  <div class="container-scroller">
-    <!-- partial:../../partials/_navbar.html -->
+ <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a class="navbar-brand brand-logo" href="index.html">
@@ -130,7 +131,7 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:../../partials/_sidebar.html -->
-       <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item nav-profile">
             <div class="nav-link">
@@ -152,25 +153,25 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="../../index.php">
               <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Quản lý tiến trình</span>
+              <span class="menu-title">Quản lý đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/forms/basic_elements.html">
+            <a class="nav-link" href="../../pages/forms/basic_elements.php">
               <i class="menu-icon mdi mdi-arrow-up-bold"></i>
               <span class="menu-title">Nộp đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
+            <a class="nav-link" href="../../pages/tables/basic-table.php">
               <i class="menu-icon mdi mdi-table"></i>
               <span class="menu-title">Phản biện đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/font-awesome.html">
+            <a class="nav-link" href="../../pages/icons/font-awesome.php">
               <i class="menu-icon mdi mdi-checkbox-marked"></i>
               <span class="menu-title">Kết quả đồ án</span>
             </a>
@@ -197,35 +198,53 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-         <div class="col-md-6 grid-margin stretch-card">
+            <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Phản biện</h4>
+                  <h4 class="card-title">Nộp đồ án</h4>
+                  <p class="card-description">
+                    Điền thông tin phần dưới
+                  </p>
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputName1">Họ tên sinh viên:</label>
+                      <label for="exampleInputName1">Họ và tên</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Đề tài đồ án</label>
+                      <label for="exampleInputEmail3">Địa chỉ Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
                     </div>
                     <div class="form-group">
-                      <label for="exampleTextarea1">Nội dung:</label>
-                      <hr>
-                      <hr>
-                      <label class="form-control" id="exampleTextarea1" rows="2"> </label>
+                      <label for="exampleInputPassword4">Mật khẩu</label>
+                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-success mr-2">Đánh giá phản biện</button>
-                    <button type="submit" class="btn btn-success mr-2">Thoát</button>
+                    <div class="form-group">
+                      <label>File upload</label>
+                      <input type="file" name="img[]" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload File">
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-info" type="button">Upload</button>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputCity1">Địa chỉ</label>
+                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="địa chỉ">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Nội dung</label>
+                      <textarea class="form-control" id="exampleTextarea1" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Đăng</button>
                   </form>
                 </div>
               </div>
             </div>
-        <!-- partial -->
-      </div>
       <!-- main-panel ends -->
-    </div>
+      </div>
     <!-- page-body-wrapper ends -->
-  </div>
+    </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../../vendors/js/vendor.bundle.base.js"></script>

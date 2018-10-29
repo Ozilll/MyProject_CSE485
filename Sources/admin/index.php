@@ -154,23 +154,23 @@
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Quản lý tiến trình</span>
+              <span class="menu-title">Quản lý đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="pages/forms/basic_elements.php">
               <i class="menu-icon mdi mdi-arrow-up-bold"></i>
               <span class="menu-title">Nộp đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="pages/tables/basic-table.php">
               <i class="menu-icon mdi mdi-table"></i>
               <span class="menu-title">Phản biện đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/font-awesome.html">
+            <a class="nav-link" href="pages/icons/font-awesome.php">
               <i class="menu-icon mdi mdi-checkbox-marked"></i>
               <span class="menu-title">Kết quả đồ án</span>
             </a>

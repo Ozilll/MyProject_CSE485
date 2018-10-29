@@ -5,19 +5,18 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Kết quả</title>
+  <title>Phản biện</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/iconfonts/font-awesome/css/font-awesome.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 
 <body>
@@ -153,25 +152,25 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="../../index.php">
               <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Quản lý tiến trình</span>
+              <span class="menu-title">Quản lý đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/forms/basic_elements.html">
+            <a class="nav-link" href="../../pages/forms/basic_elements.php">
               <i class="menu-icon mdi mdi-arrow-up-bold"></i>
               <span class="menu-title">Nộp đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
+            <a class="nav-link" href="../../pages/tables/basic-table.php">
               <i class="menu-icon mdi mdi-table"></i>
               <span class="menu-title">Phản biện đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/font-awesome.html">
+            <a class="nav-link" href="../../pages/icons/font-awesome.php">
               <i class="menu-icon mdi mdi-checkbox-marked"></i>
               <span class="menu-title">Kết quả đồ án</span>
             </a>
@@ -197,134 +196,31 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div <div class="content-wrapper">
-          <div class="row purchace-popup">
-          </div>
-          <div class="row">
-            <div class="col-lg-12 grid-margin">
+      <div class="main-panel">
+         <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">ĐỒ ÁN</h4>
-                  <div class="table-responsive">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>
-                            #
-                          </th>
-                          <th>
-                            Họ Tên
-                          </th>
-                          <th>
-                            Đề tài
-                          </th>
-                          <th>
-                            Kết quả
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="font-weight-medium">
-                            1
-                          </td>
-                          <td>
-                            Trương Minh Đức
-                          </td>
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            9
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Vân ri
-                          </td>
-                        
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            8
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            3
-                          </td>
-                          <td>
-                            Nguyễn Hữu Đức
-                          </td>
-                         
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            7
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            4
-                          </td>
-                          <td>
-                            Đinh Đăng Đức
-                          </td>
-                          
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                           5
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            5
-                          </td>
-                          <td>
-                            Phạm Việt Hưng
-                          </td>
-                        
-                          
-                          <td > ...
-                          </td>
-                          <td class="text-danger">
-                            6
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            6
-                          </td>
-                          <td>
-                            Trần Việt Nam Hoàng
-                          </td>
-                         
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            8
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <h4 class="card-title">Phản biện</h4>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="exampleInputName1">Họ tên sinh viên:</label>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Đề tài đồ án</label>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Nội dung:</label>
+                      <hr>
+                      <hr>
+                      <label class="form-control" id="exampleTextarea1" rows="2"> </label>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Đánh giá phản biện</button>
+                    <button type="submit" class="btn btn-success mr-2">Thoát</button>
+                  </form>
                 </div>
               </div>
             </div>
-        
-      </div>
+        <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
@@ -335,10 +231,14 @@
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <script src="../../vendors/js/vendor.bundle.addons.js"></script>
   <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/misc.js"></script>
   <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
 </body>
 
 </html>

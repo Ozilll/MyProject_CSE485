@@ -13,6 +13,8 @@
 				<div style="text-align: center; font-size: 17px; font-weight: bold;margin-bottom: 10px; ">Danh mục chính</div>
 				<ol class="property-list-homepage">
 					<li> <a href="#report">Thông tin đáng chú ý</a> <hr></li>
+					<li> <a href="#student-management">Quản lý đồ án sinh viên</a> <hr></li>
+					<li> <a href="#offer-project">Đề xuất đồ án</a> <hr></li>
 					<li> <a href="#all-projects">Tổng hợp đồ án của sinh viên</a> </li>
 				</ol>
 			</div>
@@ -27,6 +29,12 @@
 							<p>THÔNG TIN ĐÁNG CHÚ Ý</p>
 						</div>
 					</div>	
+				</div>
+				<div id="student-management" class="tab_content">
+					Quản lý đồ án sinh viên	
+				</div>
+				<div id="offer-project" class="tab_content">
+					Đề xuất đồ án	
 				</div>
 				<div id="all-projects" class="tab_content">
 					<div class="homepage-projects">
@@ -65,3 +73,14 @@
 		</div>	
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

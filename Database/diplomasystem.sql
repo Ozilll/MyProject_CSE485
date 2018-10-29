@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2018 at 09:40 AM
+-- Generation Time: Oct 29, 2018 at 11:43 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -57,8 +57,20 @@ CREATE TABLE `join_project` (
   `id_lecturer` int(11) NOT NULL,
   `id_project` int(11) NOT NULL,
   `time_begin` date NOT NULL,
-  `deadline` date NOT NULL
+  `deadline` date NOT NULL,
+  `score` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `join_project`
+--
+
+INSERT INTO `join_project` (`id_student`, `id_lecturer`, `id_project`, `time_begin`, `deadline`, `score`) VALUES
+(8, 2, 1, '0000-00-00', '0000-00-00', NULL),
+(8, 2, 1, '0000-00-00', '0000-00-00', NULL),
+(9, 1, 2, '0000-00-00', '0000-00-00', NULL),
+(9, 1, 2, '0000-00-00', '0000-00-00', NULL),
+(2, 2, 3, '0000-00-00', '0000-00-00', 8);
 
 -- --------------------------------------------------------
 
@@ -83,7 +95,7 @@ CREATE TABLE `lecturers` (
 
 INSERT INTO `lecturers` (`id`, `first_name`, `last_name`, `username`, `password`, `validation_code`, `active`, `email`) VALUES
 (1, 'Lacazette', 'Alex', 'lacazette', '123123', '', 1, 'lacazette@gmail.com'),
-(2, 'giang', 'vien', 'giangvien', 'giangvien', '', 1, 'giangvien@gmail.com');
+(2, 'vien', 'giang', 'giangvien', 'giangvien', '', 1, 'giangvien@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -101,6 +113,15 @@ CREATE TABLE `projects` (
   `size` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `topic`, `content`, `programming_language`, `file_upload`, `type`, `size`) VALUES
+(1, 'final year project management system', 'Make a new thing', 'PHP', '', '', 0),
+(2, 'Library management system', 'Doing something', 'PHP', '', '', 0),
+(3, 'Students management system', 'Doing something', 'Java', '', '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -115,21 +136,21 @@ CREATE TABLE `students` (
   `password_student` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `validation_code` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT '0',
-  `project` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `project` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id_student`, `first_name_student`, `last_name_student`, `username_student`, `password_student`, `validation_code`, `active`, `project`, `email`) VALUES
-(1, 'Duc', 'Nguyen', 'ducnguyen', '4297f44b13955235245b2497399d7a93', '0', 1, '', 'xyz@gmail.com'),
-(2, 'Duc', 'Truong', 'ductruong', 'ductruong', '', 0, '', 'abc@gmail.com'),
-(7, 'Lucas', 'Torreira', 'lucastorreira', 'c0ee587728f794a79c89dde44ae39bf7', '7317b70a5526a18f338b850e269d264f', 1, 'abc', 'torreira@gmail.com'),
-(8, 'Ozil', 'Mesut', 'mesutozil', 'f4e404c7f815fc68e7ce8e3c2e61e347', '55eb72e1fd21a200894f29eff9f7f38e', 1, '', 'ozil@gmail.com'),
-(9, 'Cazorla', 'Santis', 'Santis Cazorla', 'af117b3c856da39750969cfb41ca6c3a', '9941bb45e1cd5d484eca5ad42f07cf78', 1, '', 'cazorla@gmail.com'),
-(10, 'sinh', 'vien', 'sinhvien', '615ad206666f8086103305b8f77173f4', '0', 1, '', 'sinhvien@gmail.com');
+INSERT INTO `students` (`id_student`, `first_name_student`, `last_name_student`, `username_student`, `password_student`, `validation_code`, `active`, `email`, `project`) VALUES
+(1, 'Duc', 'Nguyen', 'ducnguyen', '4297f44b13955235245b2497399d7a93', '0', 1, 'xyz@gmail.com', NULL),
+(2, 'Duc', 'Truong', 'ductruong', 'ductruong', '', 0, 'abc@gmail.com', 'Yes'),
+(7, 'Lucas', 'Torreira', 'lucastorreira', 'c0ee587728f794a79c89dde44ae39bf7', '7317b70a5526a18f338b850e269d264f', 1, 'torreira@gmail.com', NULL),
+(8, 'Ozil', 'Mesut', 'mesutozil', 'f4e404c7f815fc68e7ce8e3c2e61e347', '55eb72e1fd21a200894f29eff9f7f38e', 1, 'ozil@gmail.com', 'Yes'),
+(9, 'Cazorla', 'Santis', 'Santis Cazorla', 'af117b3c856da39750969cfb41ca6c3a', '9941bb45e1cd5d484eca5ad42f07cf78', 1, 'cazorla@gmail.com', 'Yes'),
+(10, 'sinh', 'vien', 'sinhvien', '615ad206666f8086103305b8f77173f4', '0', 1, 'sinhvien@gmail.com', NULL);
 
 --
 -- Indexes for dumped tables
@@ -187,7 +208,7 @@ ALTER TABLE `lecturers`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `students`

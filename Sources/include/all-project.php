@@ -1,4 +1,4 @@
-<?php $sql = "SELECT topic, students.username_student, projects.content FROM join_project, lecturers, projects, students WHERE lecturers.id = join_project.id_lecturer AND students.id_student = join_project.id_student AND projects.id = join_project.id_project";
+<?php $sql = "SELECT topic, students.username_student, projects.content, join_project.score FROM join_project, lecturers, projects, students WHERE lecturers.id = join_project.id_lecturer AND students.id_student = join_project.id_student AND projects.id = join_project.id_project";
 	$result = query($sql);
 	confirm($result);
  ?>
@@ -14,7 +14,7 @@
 			<th>Đề tài</th>
 			<th>Tài khoản</th>
 			<th>Nội dung</th>
-			<th>Đánh giá</th>
+			<th>Điểm</th>
 		</tr>
 	</thead>
 	<tbody id="myTable">
@@ -23,7 +23,7 @@
 			<td><?php echo $row['topic']; ?></td>
 			<td><?php echo $row['username_student']; ?></td>
 			<td><?php echo $row['content']; ?></td>
-			<td>...</td>
+			<td><?php echo $row['score']; ?></td>
 		</tr>
 		<?php endwhile; ?>	
 	</tbody>

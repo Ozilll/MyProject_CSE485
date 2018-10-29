@@ -37,7 +37,7 @@
 					<?php if (!$_SESSION['project']) {
 						include("include/signup-project.php");
 					}else{
-						echo "Tải file";
+						include("include/upload-file.php");
 					} ?>
 				</div>
 				<div id="information-lecturers" class="tab_content">

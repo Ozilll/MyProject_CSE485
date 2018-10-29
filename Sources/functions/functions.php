@@ -515,8 +515,24 @@ function validate_code(){
 	}
 }
 
-/*******************JOIN PROJECT FUNCTIONS*********************/
-
+/*******************UPLOAD FILE ZIP FUNCTIONS*********************/
+function upload_file(){
+	if (isset($_POST['btn-upload'])) {
+		$file = rand(100,100000)."-".$_FILES['file']['name'];
+		$file_loc = $_FILES['file']['tmp_name'];
+		$file_type = $_FILES['file']['type'];
+		$folder = "uploads/";
+		$new_size = $file_size/2024;
+		$new_file_name = strtolower($file);
+		$final_file=str_replace('','-',$new_file_name);
+		if (move_uploaded_file($file_loc, $folder.$final_file)) {
+			$sql = "insert into projects(file_upload, type, size) values('$final_file', '$file_type', '$new_file_name')";
+			$result = query($sql);
+			confirm($result);
+		}
+	}
+	
+}
 
 
 

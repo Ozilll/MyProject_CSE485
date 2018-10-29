@@ -116,7 +116,7 @@
               <a class="dropdown-item">
                 Xem tin nhắn
               </a>
-              <a class="dropdown-item">
+              <a href="logout.php" class="dropdown-item">
                 Đăng xuất
               </a>
             </div>

@@ -1,6 +1,14 @@
+<?php include("../../../functions/init.php") ?>
+<?php $sql = "SELECT * FROM join_project, lecturers, projects, students WHERE lecturers.id = join_project.id_lecturer AND students.id_student = join_project.id_student AND projects.id = join_project.id_project";
+  $result = query($sql);
+  confirm($result);
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -16,13 +24,11 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/style.css">
-  <!-- endinject -->
   <link rel="shortcut icon" href="../../images/favicon.png" />
 </head>
 
 <body>
   <div class="container-scroller">
-    <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a class="navbar-brand brand-logo" href="index.php">
@@ -113,121 +119,25 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>
-                            #
-                          </th>
-                          <th>
-                            Họ Tên
-                          </th>
-                          <th>
-                            Đề tài
-                          </th>
-                          <th>
-                            Kết quả
-                          </th>
+                          <th>Họ Tên</th>
+                          <th>Đề tài</th>
+                          <th>Kết quả</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <?php while($row = fetch_array($result)): ?>
                         <tr>
-                          <td class="font-weight-medium">
-                            1
-                          </td>
-                          <td>
-                            Trương Minh Đức
-                          </td>
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            9
-                          </td>
+                          <td><?php echo $row['username_student']; ?></td>
+                          <td><?php echo $row['topic']; ?></td>
+                          <td class="text-danger"><?php $row['score']; ?></td>
                         </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Vân ri
-                          </td>
-                        
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            8
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            3
-                          </td>
-                          <td>
-                            Nguyễn Hữu Đức
-                          </td>
-                         
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            7
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            4
-                          </td>
-                          <td>
-                            Đinh Đăng Đức
-                          </td>
-                          
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                           5
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            5
-                          </td>
-                          <td>
-                            Phạm Việt Hưng
-                          </td>
-                        
-                          
-                          <td > ...
-                          </td>
-                          <td class="text-danger">
-                            6
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            6
-                          </td>
-                          <td>
-                            Trần Việt Nam Hoàng
-                          </td>
-                         
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            8
-                          </td>
-                        </tr>
+                        <?php endwhile; ?>  
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
             </div>
-        
       </div>
       </div>
       <!-- main-panel ends -->

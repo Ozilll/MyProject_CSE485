@@ -30,7 +30,7 @@
 					<?php if (!$_SESSION['project']) {
 						include("include/signup-project.php");
 					}else{
-						echo "Belo";
+						include("include/myproject.php");
 					} ?>
 				</div>
 				<div id="update-project" class="tab_content">

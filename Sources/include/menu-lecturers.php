@@ -31,10 +31,10 @@
 					</div>	
 				</div>
 				<div id="student-management" class="tab_content">
-					Quản lý đồ án sinh viên	
+					<?php include("include/student-projects-management.php"); ?>
 				</div>
 				<div id="offer-project" class="tab_content">
-					Đề xuất đồ án	
+					<?php include("include/proposal.php"); ?>
 				</div>
 				<div id="all-projects" class="tab_content">
 					<?php include("include/all-project.php") ?>

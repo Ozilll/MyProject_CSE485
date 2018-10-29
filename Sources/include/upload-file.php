@@ -1,25 +1,3 @@
-<div class="container">
-	<div class="text-right">
-		<h3>Nộp tài nguyên liên quan đến đồ án</h3>
-	</div>
-	<div style="color: red;"><b>Lưu ý: nén lại thành file zip trước khi nộp</b></div>
-	<br>
-	<form method="post">
-		<input type="file" name="file">
-		<button type="button" name="btn-upload">Upload</button>
-	</form>
-	<?php if (isset($_GET['success'])) { ?>
-	<label>Uploaded sucessfully!</label>
-	<?php	
-	}elseif(isset($_GET['fail'])){ ?>
-	<label>Xảy ra lỗi!</label>
-	<?php
-	} 
-	?>
-</div>
-
-
-
 <?php
 if (isset($_POST['btn-upload'])) {
 		$file = rand(100,100000)."-".$_FILES['file']['name'];
@@ -48,3 +26,23 @@ if (isset($_POST['btn-upload'])) {
 		}
 	} 
 ?>
+
+<div class="container">
+	<div class="text-right">
+		<h3>Nộp tài nguyên liên quan đến đồ án</h3>
+	</div>
+	<div style="color: red;"><b>Lưu ý: nén lại thành file zip trước khi nộp</b></div>
+	<br>
+	<form method="post">
+		<input type="file" name="file">
+		<button type="submit" name="btn-upload">Upload</button>
+	</form>
+	<?php if (isset($_GET['success'])) { ?>
+	<label>Uploaded sucessfully!</label>
+	<?php	
+	}elseif(isset($_GET['fail'])){ ?>
+	<label>Xảy ra lỗi!</label>
+	<?php
+	} 
+	?>
+</div>

@@ -161,7 +161,7 @@
           <li class="nav-item">
             <a class="nav-link" href="../../pages/forms/basic_elements.php">
               <i class="menu-icon mdi mdi-arrow-up-bold"></i>
-              <span class="menu-title">Nộp đồ án</span>
+              <span class="menu-title">Thông báo mới</span>
             </a>
           </li>
           <li class="nav-item">

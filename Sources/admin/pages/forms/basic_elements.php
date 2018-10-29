@@ -161,7 +161,7 @@
           <li class="nav-item">
             <a class="nav-link" href="../../pages/forms/basic_elements.php">
               <i class="menu-icon mdi mdi-arrow-up-bold"></i>
-              <span class="menu-title">Nộp đồ án</span>
+              <span class="menu-title">Thông báo mới</span>
             </a>
           </li>
           <li class="nav-item">
@@ -201,36 +201,18 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Nộp đồ án</h4>
+                  <h4 class="card-title">THÔNG BÁO</h4>
                   <p class="card-description">
-                    Điền thông tin phần dưới
+                    Viết thông báo ở dưới
                   </p>
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputName1">Họ và tên</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                      <label for="exampleInputName1">Tiêu đề</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Tiêu đề">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Địa chỉ Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Mật khẩu</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload File">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-info" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputCity1">Địa chỉ</label>
-                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="địa chỉ">
+                      <label for="exampleInputEmail3">Mô tả</label>
+                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Mô tả">
                     </div>
                     <div class="form-group">
                       <label for="exampleTextarea1">Nội dung</label>

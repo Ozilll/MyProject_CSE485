@@ -1,3 +1,12 @@
+<?php include("../../../functions/init.php") ?>
+<?php $sql = "SELECT * FROM students";
+  $result = query($sql);
+  confirm($result);
+ ?>
+<?php
+  $delete = $_POST['username'];
+  $xoa_phantu = "DELETE FROM students WHERE username = $delete";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,19 +75,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/forms/basic_elements.php">
+            <a class="nav-link" href="../../pages/forms/thongbao.php">
               <i class="menu-icon mdi mdi-arrow-up-bold"></i>
               <span class="menu-title">Thông báo mới</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.php">
+            <a class="nav-link" href="../../pages/tables/phanbien.php">
               <i class="menu-icon mdi mdi-table"></i>
               <span class="menu-title">Phản biện đồ án</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/font-awesome.php">
+            <a class="nav-link" href="../../pages/icons/ketqua.php">
               <i class="menu-icon mdi mdi-checkbox-marked"></i>
               <span class="menu-title">Kết quả đồ án</span>
             </a>
@@ -103,9 +112,11 @@
           </li>
         </ul>
       </nav>
-       <div <div class="content-wrapper">
+        <div>
+        <div class="content-wrapper">
           <div class="row purchace-popup">
           </div>
+          <form action="<?php $PHP_SEFL?>" method="POST">
           <div class="row">
             <div class="col-lg-12 grid-margin">
               <div class="card">
@@ -115,183 +126,35 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>
-                            Số thứ tự
-                          </th>
-                          <th>
-                            Họ Tên
-                          </th>
-                          <th>
-                            ID
-                          </th>
-                          <th>
-                            Mật khẩu
-                          </th>
+                          <th id="username">Họ và tên</th>
+                          <th>Email</th>
+                          <th>Mật khẩu</th>
                         </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="font-weight-medium">
-                            1
-                          </td>
+                        <tbody>
+                          <?php while($row = fetch_array($result)): ?> 
+                          <tr>
+                          <td><?php echo $row['username_student'] ?></td>
+                          <td><?php echo $row['email'] ?></td>
+                          <td class="text-danger"><?php echo $row['password_student'] ?></td>
                           <td>
-                            Trương Minh Đức
-                          </td>
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            123456
-                          </td>
-                           <td>
-                              <a href="#">
-                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
-                              </a>
-                               <br>
+                              <input type="button" name="xoa" id="xoa" value="Xóa">
                               <br>
-                              <a href="#">
-                                 <span class="text-success">Sửa</span>
-                              </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Vân ri
-                          </td>
-                        
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            123456
-                          </td>
-                           <td>
-                              <a href="#">
-                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
-                              </a>
-                               <br>
                               <br>
-                              <a href="#">
-                                 <span class="text-success">Sửa</span>
-                              </a>
+                              <input type="button" name="them" id="them" value="Thêm">
                           </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            3
-                          </td>
-                          <td>
-                            Nguyễn Hữu Đức
-                          </td>
-                         
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            123456
-                          </td>
-                           <td>
-                              <a href="#">
-                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
-                              </a>
-                               <br>
-                              <br>
-                              <a href="#">
-                                 <span class="text-success">Sửa</span>
-                              </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            4
-                          </td>
-                          <td>
-                            Đinh Đăng Đức
-                          </td>
-                          
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                           123456
-                          </td> 
-                          <td>
-                              <a href="#">
-                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
-                              </a>
-                               <br>
-                              <br>
-                              <a href="#">
-                                 <span class="text-success">Sửa</span>
-                              </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            5
-                          </td>
-                          <td>
-                            Phạm Việt Hưng
-                          </td>
-                        
-                          
-                          <td > ...
-                          </td>
-                          <td class="text-danger">
-                            123456
-                          </td> <td>
-                              <a href="#">
-                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
-                              </a>
-                               <br>
-                              <br>
-                              <a href="#">
-                                 <span class="text-success">Sửa</span>
-                              </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td >
-                            6
-                          </td>
-                          <td>
-                            Trần Việt Nam Hoàng
-                          </td>
-                         
-                          
-                          <td > ...
-                            
-                          </td>
-                          <td class="text-danger">
-                            123456
-                          </td> <td>
-                              <a href="#">
-                                 <span class="glyphicon glyphicon-log-out">Xóa</span>
-                              </a>
-                               <br>
-                              <br>
-                              <a href="#">
-                                 <span class="text-success">Sửa</span>
-                              </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                          </tr>
+                          <?php endwhile; ?>
+                        </tbody>
+                      </thead> 
+                   </table>
                   </div>
                 </div>
               </div>
             </div>
-        
       </div>
+      </form>
     </div>
   </div>
-</div>
   <script src="../../vendors/js/vendor.bundle.base.js"></script>
   <script src="../../vendors/js/vendor.bundle.addons.js"></script>
   <script src="../../js/off-canvas.js"></script>
